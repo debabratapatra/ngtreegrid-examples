@@ -1,6 +1,4 @@
 import { Component, ViewChild, ElementRef  } from '@angular/core';
-import { PriceComponent } from './PriceComponent';
-import { ProductComponent } from './ProductComponent';
 
 @Component({
   selector: 'app-multi-level-tree-grid',

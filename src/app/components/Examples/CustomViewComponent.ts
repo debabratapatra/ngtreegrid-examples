@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import {PriceComponent} from './../PriceComponent.ts';
+import {PriceComponent} from './../PriceComponent';
 
 @Component({
   selector: 'app-view-tree-grid',

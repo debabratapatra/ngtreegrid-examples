@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import {EditorComponent} from './../EditorComponent.ts';
-import {PriceComponent} from './../PriceComponent.ts';
+import {EditorComponent} from './../EditorComponent';
+import {PriceComponent} from './../PriceComponent';
 
 @Component({
   selector: 'app-edit-resolver-tree-grid',
