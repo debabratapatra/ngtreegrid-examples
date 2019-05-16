@@ -49,18 +49,18 @@ td.left-panel {
   }
   
   li {
-    padding: 16px 16px;
-    color: rgb(60, 64, 67);
 
     a {
       text-decoration: none;
-      color: inherit;
-    }
+      padding: 16px 16px;
+      color: rgb(60, 64, 67);
+      display: block;
 
-    &:hover {
-      background-color: rgba(227, 227, 227, 0.31);
-      cursor: pointer;
-      color: #1a73e8;
+      &:hover {
+        background-color: rgba(227, 227, 227, 0.31);
+        cursor: pointer;
+        color: #1a73e8;
+      }
     }
   }
 }
