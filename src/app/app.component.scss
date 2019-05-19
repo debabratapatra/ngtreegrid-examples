@@ -11,7 +11,7 @@ div.navigator {
 }
 
 div.navigator a.navigator-btn {
-  padding: 1rem;
+  padding: 0.8rem 1rem;
   text-decoration: none;
   font-size: 1.2rem;
   color: #202124;
@@ -60,6 +60,11 @@ td.left-panel {
         background-color: rgba(227, 227, 227, 0.31);
         cursor: pointer;
         color: #1a73e8;
+      }
+
+      &.selected {
+        color: #01475b;
+        font-weight: 600;
       }
     }
   }
