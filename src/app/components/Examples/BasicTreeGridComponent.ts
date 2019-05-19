@@ -1,16 +1,20 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
+import { NgtreegridComponent } from 'ngtreegrid';
 
 @Component({
   selector: 'app-basic-tree-grid',
   template: `
     <h2>Basic Tree Grid</h2>
     <p>Records are grouped by "Product Type" and there is a group aggregator in the price column.</p>
-    <db-ngtreegrid [data]="products" [configs]="configs"></db-ngtreegrid>
+    <button (click)="collapseAll()">Collapse All</button><button (click)="expandAll()">Expand All</button>
+    <p></p>
+    <db-ngtreegrid #angularGrid [data]="products" [configs]="configs"></db-ngtreegrid>
     <p>For customized value, renderer function can be used(See below). Or you can use Custom View Component altogether.</p>
     <iframe #iframe type="text/javascript" width="100%" height="400px" style="margin: 50px 0 0 0;border:0"></iframe> 
   `
 })
 export class BasicTreeGridComponent {
+  @ViewChild('angularGrid') angularGrid: NgtreegridComponent;
   products: any[] = [
       { product_type: 'Book', name: 'Angular', price: 90 },
       { product_type: 'Book', name: 'Python', price: 70 },
@@ -47,6 +51,14 @@ export class BasicTreeGridComponent {
       'group_by_header': 'Product Type',
       'group_by_width': '100px'
     };
+
+    collapseAll() {
+      this.angularGrid.collapseAll();
+    }
+  
+    expandAll() {
+      this.angularGrid.expandAll();
+    }
 
     @ViewChild('iframe') iframe: ElementRef;
     gistUrl: String = "https://gist.github.com/debabratapatra/ea8f955981568a53c8a3caae3e39e218.js";
