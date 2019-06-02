@@ -16,6 +16,7 @@ import { CondRowEditComponent } from './components/Examples/CondRowEditComponent
 import { CustomViewComponent } from './components/Examples/CustomViewComponent';
 import { CustomEditorComponent } from './components/Examples/CustomEditorComponent';
 import { EditDeleteResolverComponent } from './components/Examples/EditDeleteResolverComponent';
+import { FilterComponent } from './components/Examples/Filter.component';
 
 @NgModule({
   imports: [ 
@@ -36,6 +37,7 @@ import { EditDeleteResolverComponent } from './components/Examples/EditDeleteRes
     CondRowEditComponent,
     CustomViewComponent,
     CustomEditorComponent,
+    FilterComponent,
     EditDeleteResolverComponent
   ],
   bootstrap:    [ AppComponent ],

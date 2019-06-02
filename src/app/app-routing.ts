@@ -7,6 +7,7 @@ import { CondRowEditComponent } from './components/Examples/CondRowEditComponent
 import { CustomViewComponent } from './components/Examples/CustomViewComponent';
 import { CustomEditorComponent } from './components/Examples/CustomEditorComponent';
 import { EditDeleteResolverComponent } from './components/Examples/EditDeleteResolverComponent';
+import { FilterComponent } from './components/Examples/Filter.component';
 
 const routes: Routes = [
   { path: '', component: BasicTreeGridComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'cond_row_edit', component: CondRowEditComponent },
   { path: 'custom_view_component', component: CustomViewComponent },
   { path: 'custom_edit_component', component: CustomEditorComponent },
+  { path: 'filter_column', component: FilterComponent },
   { path: 'resolve_row_add', component: EditDeleteResolverComponent }
 ];
  
