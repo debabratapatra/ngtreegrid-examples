@@ -11,10 +11,7 @@ import { NgtreegridComponent } from 'ngtreegrid';
     <db-ngtreegrid 
     #angularGrid
     [data]="products" 
-    [configs]="configs"
-    (rowdelete)="onRowDelete($event)" 
-    (rowsave)="onRowSave($event)" 
-    (rowadd)="onRowAdd($event)">
+    [configs]="configs">
     </db-ngtreegrid>
     <p>Set multi_select property at the grid level to enable this feature.
     </p>

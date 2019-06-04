@@ -11,10 +11,7 @@ import { NgtreegridComponent } from 'ngtreegrid';
     <db-ngtreegrid 
     #angularGrid
     [data]="products" 
-    [configs]="configs"
-    (rowdelete)="onRowDelete($event)" 
-    (rowsave)="onRowSave($event)" 
-    (rowadd)="onRowAdd($event)">
+    [configs]="configs">
     </db-ngtreegrid>
     <p>Enable filter at grid level to enable filter toolbar. Filter can be disabled at column level.
     </p>
