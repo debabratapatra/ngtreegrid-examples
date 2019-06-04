@@ -1,6 +1,6 @@
 div.header {
   height: 4.2rem;
-  background-color: #f6f5f5;
+  background-color: #242424;
   position: relative;
 }
 
@@ -14,12 +14,11 @@ div.navigator a.navigator-btn {
   padding: 0.8rem 1rem;
   text-decoration: none;
   font-size: 1.2rem;
-  color: #202124;
+  color: white;
 }
 
 div.navigator a.navigator-btn:hover {
-  background-color: #e2e2e2;
-  border-radius: 3px;
+  color: gray;
 }
 
 .custom_class {

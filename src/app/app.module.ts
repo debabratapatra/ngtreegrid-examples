@@ -17,6 +17,7 @@ import { CustomViewComponent } from './components/Examples/CustomViewComponent';
 import { CustomEditorComponent } from './components/Examples/CustomEditorComponent';
 import { EditDeleteResolverComponent } from './components/Examples/EditDeleteResolverComponent';
 import { FilterComponent } from './components/Examples/Filter.component';
+import { MultiSelectComponent } from './components/Examples/MultiSelect.component';
 
 @NgModule({
   imports: [ 
@@ -38,7 +39,8 @@ import { FilterComponent } from './components/Examples/Filter.component';
     CustomViewComponent,
     CustomEditorComponent,
     FilterComponent,
-    EditDeleteResolverComponent
+    EditDeleteResolverComponent,
+    MultiSelectComponent
   ],
   bootstrap:    [ AppComponent ],
   entryComponents: [PriceComponent, EditorComponent, ProductComponent]
