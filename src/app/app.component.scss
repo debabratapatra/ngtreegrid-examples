@@ -28,7 +28,7 @@ div.navigator a.navigator-btn:hover {
 div.title-header {
   margin-top: 20px;
   text-align: center;
-  font-weight: 800;
+  font-weight: 600;
   font-size: 35px;
 }
 
@@ -55,9 +55,9 @@ td.left-panel {
       display: block;
 
       &:hover {
-        background-color: rgba(227, 227, 227, 0.31);
+        background-color: #f7f7f7;
         cursor: pointer;
-        color: #1a73e8;
+        color: #01475b;
       }
 
       &.selected {
@@ -69,6 +69,15 @@ td.left-panel {
 }
 td.content {
   width: 60%;
+}
+
+span.donate {
+  font-size: 20px;
+  position: absolute;
+  right: 20px;
+  a {
+    text-decoration: none;
+  }
 }
 
 @media only screen and (max-width: 800px) {
