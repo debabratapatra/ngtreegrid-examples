@@ -2,14 +2,7 @@ import { Component, ViewChild, ElementRef  } from '@angular/core';
 
 @Component({
   selector: 'app-multi-level-tree-grid',
-  template: `
-    <h2>Multi Level tree</h2>
-    <db-ngtreegrid [data]="multilevel_products" [configs]="multilelvel_configs"></db-ngtreegrid>
-    <p>An array can be given to the group_by config for grouping data by multiple fields.
-    </p>
-    <iframe #iframe type="text/javascript" width="100%" height="500px" style="margin: 50px 0 0 0;border:0">
-  </iframe>
-  `,
+  templateUrl: 'htmls/multilevel.component.html'
 })
 export class MultilevelTreeGridComponent {
   multilevel_products: any[] = [

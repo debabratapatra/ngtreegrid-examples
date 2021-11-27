@@ -4,14 +4,7 @@ import {PriceComponent} from './../PriceComponent';
 
 @Component({
   selector: 'app-editor-tree-grid',
-  template: `
-    <h2>Custom Editor Component</h2>
-    <db-ngtreegrid [data]="products" [configs]="configs"></db-ngtreegrid>
-    <p>Custom Editor can be set in the editor config of the column. This Component needs to be extended from DefaultEditor and need to be added to the entryComponents of the module.
-    See below for more details.
-    </p>
-    <iframe #iframe type="text/javascript" width="100%" height="400px" style="margin: 50px 0 0 0;border:0"></iframe> 
-  `
+  templateUrl: 'htmls/customEditor.component.html'
 })
 export class CustomEditorComponent {
   products: any[] = [
@@ -25,6 +18,15 @@ export class CustomEditorComponent {
       { product_type: 'Electronic', name: 'Hard Drive', price: 55 }
     ];
     configs: any = {
+      css: { // Optional
+        expand_class: 'fa fa-caret-right',
+        collapse_class: 'fa fa-caret-down',
+        add_class: 'fa fa-plus',
+        edit_class: 'fa fa-pencil',
+        delete_class: 'fa fa-trash',
+        save_class: 'fa fa-save',
+        cancel_class: 'fa fa-remove',
+      },
       'actions': {
         'add': true,
         'edit': true,

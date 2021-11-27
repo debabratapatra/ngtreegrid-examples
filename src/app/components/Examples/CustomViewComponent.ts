@@ -3,15 +3,7 @@ import {PriceComponent} from './../PriceComponent';
 
 @Component({
   selector: 'app-view-tree-grid',
-  template: `
-    <h2>Custom View Component</h2>
-    <db-ngtreegrid [data]="products" [configs]="configs"></db-ngtreegrid>
-    <p>For Custom component, type of the column should be set to 'custom' and Custom Component should be set in component config of the Column. 
-    This component need to be added to the entryComponents of the module.
-    See below for more details.
-    </p>
-    <iframe #iframe type="text/javascript" width="100%" height="400px" style="margin: 50px 0 0 0;border:0"></iframe> 
-  `
+  templateUrl: 'htmls/customview.component.html'
 })
 export class CustomViewComponent {
   products: any[] = [
@@ -25,6 +17,15 @@ export class CustomViewComponent {
       { product_type: 'Electronic', name: 'Hard Drive', price: 55 }
     ];
     configs: any = {
+      css: { // Optional
+        expand_class: 'fa fa-caret-right',
+        collapse_class: 'fa fa-caret-down',
+        add_class: 'fa fa-plus',
+        edit_class: 'fa fa-pencil',
+        delete_class: 'fa fa-trash',
+        save_class: 'fa fa-save',
+        cancel_class: 'fa fa-remove',
+      },
       'columns': [{
         'header': 'Product Name',
         'name': 'name',

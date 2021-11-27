@@ -1,0 +1,25 @@
+<h2>Multi Level tree</h2>
+<db-ngtreegrid [data]="multilevel_products" [configs]="multilelvel_configs"></db-ngtreegrid>
+<p>An array can be given to the <span class="code">group_by</span> config for grouping data by multiple fields.
+</p>
+<h3>Data</h3>
+Let's say you have data like this. Here data can be grouped by <span class="code">product_type</span>,
+ <span class="code">marketer</span>, <span class="code">author</span>.
+<pre class="code">
+    <span class="tr first-row"><span class="th"></span><code>{{"{ product_type: 'Book', name: 'Angular', price: 90, marketer: 'XY', author: 'Sam' }"}}</code></span>
+    <span class="tr e"><span class="th"></span><code>{{"{ product_type: 'Book', name: 'Python', price: 70, marketer: 'XY', author: 'Lam' }"}}</code></span>
+    <span class="tr e"><span class="th"></span><code>{{"{ product_type: 'Book', name: 'Java', price: 50, marketer: 'AB', author: 'Lam' }"}}</code></span>
+    <span class="tr e"><span class="th"></span><code>{{"{ product_type: 'Electronic', name: 'Mouse', price: 50, marketer: 'AB', author: 'Sam' }"}}</code></span>
+    <span class="tr e"><span class="th"></span><code>{{"{ product_type: 'Electronic', name: 'Speaker', price: 45, marketer: 'AB', author: 'Lam' }"}}</code></span>
+</pre>
+<h3>Configuration</h3>
+<span class="code">group_by</span> accepts an array. 
+<pre class="code">
+    <span class="tr first-row"><span class="th"></span><code>{{"configs: any = {"}}</code></span>
+    <span class="tr e"><span class="th"></span><code>{{"   'group_by': ['product_type', 'marketer', 'author']"}}</code></span>
+    <span class="tr"><span class="th"></span><code>{{"   'group_by_header': ['Product Type', 'Marketer', 'Author']"}}</code></span>
+    <span class="tr e"><span class="th"></span><code>{{"}"}}</code></span>
+</pre>
+<div style="margin: 20px 0 0 0;">Please check the Full code below.</div>
+<iframe #iframe type="text/javascript" width="100%" height="500px" style="margin: 10px 0 0 0;border:0">
+</iframe>

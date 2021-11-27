@@ -4,19 +4,7 @@ import {PriceComponent} from './../PriceComponent';
 
 @Component({
   selector: 'app-edit-resolver-tree-grid',
-  template: `
-    <h2>Add, Edit and Delete Resolver Component</h2>
-    <db-ngtreegrid 
-    [data]="products" 
-    [configs]="configs"
-    (rowdelete)="onRowDelete($event)" 
-    (rowsave)="onRowSave($event)" 
-    (rowadd)="onRowAdd($event)">
-    </db-ngtreegrid>
-    <p>If Add, Edit and Delete needs to be resolved after confirmation from backend then resolve_add, resolve_edit and resolve_delete needs to be set to true under actions config. And then listen to the rowadd, rowsave and rowdelete events. See below for more details.
-    </p>
-    <iframe #iframe type="text/javascript" width="100%" height="400px" style="margin: 50px 0 0 0;border:0"></iframe> 
-  `
+  templateUrl: 'htmls/resolver.component.html'
 })
 export class EditDeleteResolverComponent {
   products: any[] = [
@@ -30,6 +18,15 @@ export class EditDeleteResolverComponent {
       { product_type: 'Electronic', name: 'Hard Drive', price: 55 }
     ];
     configs: any = {
+      css: { // Optional
+        expand_class: 'fa fa-caret-right',
+        collapse_class: 'fa fa-caret-down',
+        add_class: 'fa fa-plus',
+        edit_class: 'fa fa-pencil',
+        delete_class: 'fa fa-trash',
+        save_class: 'fa fa-save',
+        cancel_class: 'fa fa-remove',
+      },
       'actions': {
         'add': true,
         'edit': true,

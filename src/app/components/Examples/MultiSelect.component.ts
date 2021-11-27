@@ -5,18 +5,7 @@ import { NgtreegridComponent } from 'ngtreegrid';
 
 @Component({
   selector: 'app-edit-resolver-tree-grid',
-  template: `
-    <h2>Multi Select Component</h2>
-    <button (click)="selectAll()">Select All</button><button (click)="deSelectAll()">DeSelect All</button><p></p>
-    <db-ngtreegrid 
-    #angularGrid
-    [data]="products" 
-    [configs]="configs">
-    </db-ngtreegrid>
-    <p>Set multi_select property at the grid level to enable this feature.
-    </p>
-    <iframe #iframe type="text/javascript" width="100%" height="400px" style="margin: 50px 0 0 0;border:0"></iframe> 
-  `
+  templateUrl: 'htmls/selection.component.html'
 })
 export class MultiSelectComponent {
   @ViewChild('angularGrid') angularGrid: NgtreegridComponent;

@@ -2,16 +2,7 @@ import { Component, ViewChild, ElementRef  } from '@angular/core';
 
 @Component({
   selector: 'app-cond-row-edit',
-  template: `
-   <h2>Conditional Row Edit, Delete and CSS Class</h2>
-    <db-ngtreegrid [data]="cond_products" [configs]="cond_configs"></db-ngtreegrid>
-    <p> If some rows in the grid shouldn't be edited or deleted then row_edit_function and row_delete_function methods can be set at the grid level. These methods will get row_data as arguments.
-    </p>
-    <p> If some rows need to be highlighted in the grid then row_class_function function can be set.
-    </p>
-    <iframe #iframe type="text/javascript" width="100%" height="400px" style="margin: 50px 0 0 0;border:0">
-  </iframe>
-  `,
+  templateUrl: 'htmls/conditionalRow.component.html'
 })
 export class CondRowEditComponent {
   cond_products: any[] = [
@@ -26,6 +17,15 @@ export class CondRowEditComponent {
     ];
 
     cond_configs: any = {
+      css: { // Optional
+        expand_class: 'fa fa-caret-right',
+        collapse_class: 'fa fa-caret-down',
+        add_class: 'fa fa-plus',
+        edit_class: 'fa fa-pencil',
+        delete_class: 'fa fa-trash',
+        save_class: 'fa fa-save',
+        cancel_class: 'fa fa-remove',
+      },
       'group_by': 'product_type',
       'group_by_header': 'Product Type',
       'group_by_width': '100px',
