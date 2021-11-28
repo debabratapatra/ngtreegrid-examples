@@ -10,5 +10,77 @@
     This Component needs to be extended from
     <b>DefaultEditor</b> and need to be added to the <b> <span class="code">entryComponents</span></b> of the module.
 </p>
-<div style="margin: 20px 0 0 0;">Please check the Full code below.</div>
-<iframe #iframe type="text/javascript" width="100%" height="400px" style="margin: 10px 0 0 0;border:0"></iframe>
+<div style="margin: 20px 0;">Please check the Full code below.</div>
+<pre class="prettyprint linenums lang-ts">
+    {{"
+    @Component({
+        selector: 'app-custom-editor',
+        template: `
+        &lt;input 
+          type='number'
+          [(ngModel)]='row_data[column.name]''
+          (keydown.enter)='editcomplete.emit($event)'
+          (keydown.esc)='canceledit.emit($event)'&gt;
+        `,
+      })
+      export class EditorComponent extends DefaultEditor {
+        @Input()
+        cell_value: string;
+      
+        @Input()
+        row_data: any;
+      
+        @Input()
+        column: any;
+      
+        constructor() {
+          super();
+        }
+      
+        ngOnInit() {
+        }
+      }
+            
+      export class CustomEditorComponent {
+        products: any[] = [
+            { product_type: 'Book', name: 'Angular', price: 90 },
+            { product_type: 'Book', name: 'Python', price: 70 },
+            { product_type: 'Book', name: 'PHP', price: 80 },
+            { product_type: 'Book', name: 'Java', price: 50 },
+            { product_type: 'Electronic', name: 'Mouse', price: 50 },
+            { product_type: 'Electronic', name: 'Earphone', price: 20 },
+            { product_type: 'Electronic', name: 'Speaker', price: 45 },
+            { product_type: 'Electronic', name: 'Hard Drive', price: 55 }
+          ];
+          configs: any = {
+            'actions': {
+              'add': true,
+              'edit': true,
+              'delete': true,
+            },
+            'columns': [{
+              'header': 'Product Name',
+              'name': 'name',
+              'sortable': false,
+              'hidden': false,
+              'editable': true
+            }, {
+              'header': 'Price',
+              'name': 'price',
+              'width': '200px',
+              'type': 'custom',
+              'editable': true,
+              'component': PriceComponent,
+              'editor': EditorComponent,
+              'group_aggregator': (array) => {
+                const prices = array.map((item) => item.price);
+                return '$' + prices.reduce((acc, item) => Number(acc) + Number(item));
+              }
+            }],
+            'group_by': 'product_type',
+            'group_by_header': 'Product Type',
+            'group_by_width': '100px'
+          };
+      }
+    "}}
+</pre>

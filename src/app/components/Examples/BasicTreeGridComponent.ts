@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NgtreegridComponent } from 'ngtreegrid';
 
 @Component({
@@ -50,25 +50,5 @@ export class BasicTreeGridComponent {
   
     expandAll() {
       this.angularGrid.expandAll();
-    }
-
-    @ViewChild('iframe') iframe: ElementRef;
-    gistUrl: String = "https://gist.github.com/debabratapatra/ea8f955981568a53c8a3caae3e39e218.js";
-
-    ngAfterViewInit() {
-      const doc = this.iframe.nativeElement.contentDocument || this.iframe.nativeElement.contentElement.contentWindow;
-        const content = `
-            <html>
-            <head>
-              <base target="_parent">
-            </head>
-            <body>
-            <script type="text/javascript" src="${this.gistUrl}"></script>
-            </body>
-          </html>
-        `;
-        doc.open();
-        doc.write(content);
-        doc.close();
     }
 }

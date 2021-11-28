@@ -47,4 +47,64 @@
 </pre>
 
 <div style="margin: 20px 0 0 0;">Please check the Full code below.</div>
-<iframe #iframe type="text/javascript" width="100%" height="400px" style="margin: 10px 0 0 0;border:0"></iframe>
+<pre class="prettyprint linenums lang-ts">
+    {{"
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { NgtreegridComponent } from 'ngtreegrid';
+
+@Component({
+  selector: 'app-basic-tree-grid',
+  template: `
+  &lt;button (click)='collapseAll()'&gt;Collapse All&lt;/button>&lt;button (click)='expandAll()'&gt;Expand All&lt;/button&gt;
+  &lt;db-ngtreegrid #angularGrid [data]='products' [configs]='configs'>&lt;/db-ngtreegrid&gt;
+  `
+})
+export class BasicTreeGridComponent {
+  @ViewChild('angularGrid') angularGrid: NgTreeGridComponent;
+  products: any[] = [
+      { product_type: 'Book', name: 'Angular', price: 90 },
+      { product_type: 'Book', name: 'Python', price: 70 },
+      { product_type: 'Book', name: 'PHP', price: 80 },
+      { product_type: 'Book', name: 'Java', price: 50 },
+      { product_type: 'Electronic', name: 'Mouse', price: 50 },
+      { product_type: 'Electronic', name: 'Earphone', price: 20 },
+      { product_type: 'Electronic', name: 'Speaker', price: 45 },
+      { product_type: 'Electronic', name: 'Hard Drive', price: 55 }
+    ];
+    configs: any = {
+      'columns': [{
+        'header': 'Product Name',
+        'name': 'name',
+        'sortable': false,
+        'hidden': false
+      }, {
+        'header': 'Price',
+        'name': 'price',
+        'width': '200px',
+        'renderer': (value, rec) => {
+          return '$' + value;
+        },
+        'group_aggregator': (array) => {
+          const prices = array.map((item) => item.price);
+          return '$' + prices.reduce((acc, item) => Number(acc) + Number(item));
+        }
+      }],
+      css: { // Optional
+        expand_class: 'fa fa-caret-right',
+        collapse_class: 'fa fa-caret-down',
+      },
+      'group_by': 'product_type',
+      'group_by_header': 'Product Type',
+      'group_by_width': '100px'
+    };
+
+  collapseAll() {
+    this.angularGrid.collapseAll();
+  }
+
+  expandAll() {
+    this.angularGrid.expandAll();
+  }
+}
+    "}}
+</pre>

@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
 import {EditorComponent} from './../EditorComponent';
 import {PriceComponent} from './../PriceComponent';
 
@@ -55,24 +55,4 @@ export class CustomEditorComponent {
       'group_by_header': 'Product Type',
       'group_by_width': '100px'
     };
-
-    @ViewChild('iframe') iframe: ElementRef;
-    gistUrl: String = "https://gist.github.com/debabratapatra/6a4dd5e7683d61f54a540b8c295c6d9f.js";
-
-    ngAfterViewInit() {
-      const doc = this.iframe.nativeElement.contentDocument || this.iframe.nativeElement.contentElement.contentWindow;
-        const content = `
-            <html>
-            <head>
-              <base target="_parent">
-            </head>
-            <body>
-            <script type="text/javascript" src="${this.gistUrl}"></script>
-            </body>
-          </html>
-        `;
-        doc.open();
-        doc.write(content);
-        doc.close();
-    }
 }
