@@ -94,9 +94,13 @@ pre.code span.th::before {
   content: counter(linenum) ".";
 }
 
+pre.prettyprint {
+  border-color: #d1cece !important;
+}
+
 .short-code {
   display: inline-block;
-  background-color: #eee;
+  background-color: #f9f9f9;
 }
 
 li.L0, li.L1, li.L2, li.L3, li.L4,

@@ -1,22 +1,22 @@
 <h2>With Add, Edit and Delete Option</h2>
 <db-ngtreegrid [data]="edit_products" [configs]="edit_configs" (add)="onAdd($event)"></db-ngtreegrid>
-<p>Icon class for Expand, Collapse, Edit, Cancel, Delete and Add can be given under css property of the Grid.</p>
+<p>This is a basic Tree grid with add, edit and delete features.</p>
 
 <h3>CSS</h3>
-Icons can be customized by setting a css class. Please check below.
+Icon class for Expand, Collapse, Edit, Cancel, Delete and Add can be given under css property of the Grid. Please check below.
 <pre class="code">
     <span class="tr first-row"><span class="th"></span><code>{{"css: { "}}</code></span>
     <span class="tr e"><span class="th"></span><code>{{"    expand_class: 'fa fa-caret-right',"}}</code></span>
     <span class="tr "><span class="th"></span><code>{{"    collapse_class: 'fa fa-caret-down',"}}</code></span>
     <span class="tr e"><span class="th"></span><code>{{"    edit_class: 'fa fa-pencil',"}}</code></span>
     <span class="tr "><span class="th"></span><code>{{"    delete_class: 'fa fa-trash',"}}</code></span>
-    <span class="tr "><span class="th"></span><code>{{"    save_class: 'fa fa-save',"}}</code></span>
+    <span class="tr e"><span class="th"></span><code>{{"    save_class: 'fa fa-save',"}}</code></span>
     <span class="tr "><span class="th"></span><code>{{"    cancel_class: 'fa fa-remove',"}}</code></span>
     <span class="tr e"><span class="th"></span><code>{{"}"}}</code></span>
 </pre>
 
 <h3>Actions</h3>
-Below Configuration needs to be enable for add, edit and delete.
+Below Configuration needs to be enabled for add, edit and delete.
 <pre class="code">
     <span class="tr first-row"><span class="th"></span><code>{{"actions: {"}}</code></span>
     <span class="tr e"><span class="th"></span><code>{{"    add: true,"}}</code></span>

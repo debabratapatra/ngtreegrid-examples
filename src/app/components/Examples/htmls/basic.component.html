@@ -2,10 +2,11 @@
 <button (click)="collapseAll()">Collapse All</button><button (click)="expandAll()">Expand All</button>
 <p></p>
 <db-ngtreegrid #angularGrid [data]="products" [configs]="configs"></db-ngtreegrid>
-<p>This is a basic tree grid. Records are grouped by "Product Type" and there is a group aggregator in the price column.</p>
-
+<p>This is a basic tree grid. Records are grouped by <b>"Product Type"</b> and there is a group aggregator in the price
+  column.</p>
 
 <h3>Data</h3>
+<p>This is a sample data.</p>
 <pre class="code">
     <span class="tr first-row"><span class="th"></span><code>{{"{ product_type: 'Book', name: 'Angular', price: 90 }"}}</code></span>
     <span class="tr e"><span class="th"></span><code>{{"{ product_type: 'Book', name: 'Python', price: 70 }"}}</code></span>
@@ -15,22 +16,24 @@
 <span class="code">group_by</span> is mandatory.
 <pre class="code">
     <span class="tr first-row"><span class="th"></span><code>{{"configs: any = {"}}</code></span>
-    <span class="tr e"><span class="th"></span><code>{{"   'group_by': 'product_type',"}}</code></span>
-    <span class="tr"><span class="th"></span><code>{{"   'group_by_header': 'Product Type',"}}</code></span>
+    <span class="tr e"><span class="th"></span><code>{{"  group_by: 'product_type',"}}</code></span>
+    <span class="tr"><span class="th"></span><code>{{"  group_by_header: 'Product Type',"}}</code></span>
     <span class="tr e"><span class="th"></span><code>{{"}"}}</code></span>
 </pre>
 
 <h3>Column</h3>
-<span class="code">name</span> is mandatory. It is a key in Data.
+<span class="code">name</span> is mandatory. It is a key in source array.
 <pre class="code">
-    <span class="tr first-row"><span class="th"></span><code>name: 'name'</code></span>
-    <span class="tr e"><span class="th"></span><code>header: 'Product Name'</code></span>
-    <span class="tr"><span class="th"></span><code>width: '100px'</code></span>
+  <span class="tr first-row"><span class="th"></span><code>{{"{"}}</code></span>
+    <span class="tr e"><span class="th"></span><code> name: 'name'</code></span>
+    <span class="tr"><span class="th"></span><code> header: 'Product Name'</code></span>
+    <span class="tr e"><span class="th"></span><code> width: '100px'</code></span>
+    <span class="tr"><span class="th"></span><code>}</code></span>
 </pre>
 
 <h3>Renderer</h3>
-<p>For customized value, <span class="code">renderer</span> function can be used(See below). Or you can use Custom View Component
-    altogether.</p>
+<p>For customized value, <span class="code">renderer</span> function can be used(See below). Or you can use Custom View
+  Component altogether.</p>
 <pre class="code">
     <span class="tr first-row"><span class="th"></span><code>{{"renderer: function(value, rec) {"}}</code></span>
     <span class="tr e"><span class="th"></span><code>{{"    return '$' + value;"}}</code></span>
