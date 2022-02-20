@@ -69,7 +69,7 @@ pre.code code {
 
 /* Additional styling demo */
 pre.code {
-  border: solid 1px black;
+  border: solid 1px #d5d0d0;
   width: auto;
 }
 pre.code span.th {
